@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaShield - Emergency Plan</title>
+  <link rel="icon" href="favicon.webp" type="image/webp" />
+  <link rel="stylesheet" href="css/register.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <img src="favicon.webp" alt="AquaShield logo" class="brand_logo" />
+      <h1>AquaShield</h1>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="instruction.html">Guide</a>
+      <a href="register.html" class="active">Plan</a>
+    </nav>
+  </header>
+
+  <main class="plan-page">
+    <section class="plan-hero">
+      <h2>Create Your Emergency Plan</h2>
+      <p>
+        Save important information for faster action and safer evacuation
+        during a tsunami emergency.
+      </p>
+    </section>
+
+    <form class="plan-form" id="emergency-plan-form">
+      <section class="form-card">
+        <h3>Personal Information</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input type="text" id="full-name" name="full-name" />
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" name="address" />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <h3>Emergency Contact</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="contact-name">Contact Name</label>
+            <input type="text" id="contact-name" name="contact-name" />
+          </div>
+
+          <div class="form-group">
+            <label for="relationship">Relationship</label>
+            <input type="text" id="relationship" name="relationship" />
+          </div>
+
+          <div class="form-group">
+            <label for="contact-phone">Phone Number</label>
+            <input type="tel" id="contact-phone" name="contact-phone" />
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <h3>Household Information</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="people-home">People in Home</label>
+            <input type="text" id="people-home" name="people-home" placeholder="Adults, children, elderly" />
+          </div>
+
+          <div class="form-group">
+            <label for="pets">Pets</label>
+            <input type="text" id="pets" name="pets" />
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <h3>Medical / Important Needs</h3>
+        <div class="form-grid single-column">
+          <div class="form-group">
+            <label for="medical-needs">Medical needs, medication, allergies, or important notes</label>
+            <textarea id="medical-needs" name="medical-needs" rows="4"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <h3>Evacuation Plan</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="safe-location">Safe Location</label>
+            <input type="text" id="safe-location" name="safe-location" />
+          </div>
+
+          <div class="form-group">
+            <label for="meeting-point">Meeting Point</label>
+            <input type="text" id="meeting-point" name="meeting-point" />
+          </div>
+
+          <div class="form-group">
+            <label for="evac-route">Evacuation Route</label>
+            <input type="text" id="evac-route" name="evac-route" />
+          </div>
+        </div>
+      </section>
+
+      <section class="form-card">
+        <h3>Extra Notes</h3>
+        <div class="form-grid single-column">
+          <div class="form-group">
+            <label for="extra-notes">Anything else to remember</label>
+            <textarea id="extra-notes" name="extra-notes" rows="4"></textarea>
+          </div>
+        </div>
+      </section>
+
+      <div class="form-actions">
+        <button type="submit" class="save-btn">Save Plan</button>
+        <button type="button" class="clear-btn" id="clear-plan-btn">Clear Plan</button>
+      </div>
+    </form>
+
+    <section class="alert-box">
+      <p><span class="warning-icon">⚠</span> Always follow local authorities’ instructions first.</p>
+    </section>
+  </main>
+
+  <script src="js/register.js"></script>
+</body>
+
+</html>

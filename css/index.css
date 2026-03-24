@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8fbff;
+  color: #0d1b2a;
+}
+
+.site-header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  padding: 18px 40px;
+  background-color: #ffffff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.brand_logo {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  display: block;
+}
+
+.brand h1 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  color: #1b4965;
+  line-height: 1;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1b4965;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+nav a.active {
+  color: #5fa8d3;
+}
+
+.hero {
+  position: relative;
+  min-height: 78vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(13, 27, 42, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  padding: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.hero-content h2 {
+  font-size: 4rem;
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 700;
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background-color: #5fa8d3;
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #ffffff;
+  color: #1b4965;
+}
+
+.overview {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 70px 20px 50px;
+  text-align: center;
+}
+
+.overview h3 {
+  font-size: 2.4rem;
+  color: #1b4965;
+  margin-bottom: 32px;
+}
+
+.overview-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.overview-item {
+  background-color: #1b4965;
+  color: #ffffff;
+  border-radius: 28px;
+  padding: 34px 24px;
+  box-shadow: 0 10px 24px rgba(13, 27, 42, 0.12);
+}
+
+.overview-item h4 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+
+.overview-item p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.alert-box {
+  max-width: 900px;
+  margin: 0 auto 70px;
+  background-color: #f7c948;
+  color: #0d1b2a;
+  text-align: center;
+  padding: 18px 24px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.alert-box p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.warning-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .site-header {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .brand {
+    justify-content: center;
+  }
+
+  .brand_logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .brand h1 {
+    font-size: 2.5rem;
+  }
+
+  nav {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero-content h2 {
+    font-size: 2.6rem;
+  }
+
+  .hero-content p {
+    font-size: 1.05rem;
+  }
+
+  .overview-items {
+    grid-template-columns: 1fr;
+  }
+}

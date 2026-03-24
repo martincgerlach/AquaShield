@@ -1,0 +1,72 @@
+/* LAYOUT FOR MAIN CONTENT */
+body {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+main {
+  display: grid;
+  row-gap: 1rem;
+}
+main > *:not(:first-child) {
+  margin: 0 1rem;
+}
+main {
+  grid-template-rows: min-content min-content 1fr min-content;
+}
+#instruction main {
+  grid-template-rows: min-content min-content min-content 1fr min-content;
+}
+/* LAYOUT FOR HEADER AND FOOTER */
+footer {
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 1200px) 1fr;
+}
+
+header {
+  grid-row: 1;
+  display: grid;
+  grid-template-columns: 1fr minmax(300px, 1200px) 1fr;
+}
+header nav,
+footer nav {
+  grid-column: 2 / 3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav > * {
+  flex: 1;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+header ul {
+  height: 100%;
+  width: clamp(175px, 50%, 300px);
+}
+footer ul {
+  flex-direction: column;
+  padding-left: 1rem;
+}
+
+/* LAYOUT FOR SECTIONS */
+
+@media (width > 600px) {
+  #instruction > main,
+  #register > main {
+    grid-template-columns: 5fr 3fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  .qr {
+    order: 1;
+  }
+
+  h1 {
+    grid-column: 1 / -1;
+  }
+}
