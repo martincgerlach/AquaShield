@@ -1,16 +1,93 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 - Side ikke fundet</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaShield - Page Not Found</title>
+  <link rel="icon" href="favicon.webp" type="image/webp" />
+  <link rel="stylesheet" href="css/404.css" />
 </head>
 
 <body>
-  <h1>404 - Side ikke fundet</h1>
-  <p>Beklager, siden du leder efter, kunne ikke findes.</p>
-  <a href="/">Gå tilbage til forsiden</a>
+  <header class="site-header">
+    <div class="brand">
+      <img src="favicon.webp" alt="AquaShield logo" class="brand_logo" />
+      <h1>AquaShield</h1>
+    </div>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="instruction.html">Guide</a>
+      <a href="register.html">Plan</a>
+    </nav>
+  </header>
+
+  <div class="wave-top">
+    <svg viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#5FA8D3"
+        d="M0,64L60,69.3C120,75,240,85,360,80C480,75,600,53,720,58.7C840,64,960,96,1080,101.3C1200,107,1320,85,1380,74.7L1440,64L1440,0L0,0Z">
+      </path>
+    </svg>
+  </div>
+
+  <main class="error-page">
+    <section class="error-hero">
+      <div class="error-copy">
+        <p class="eyebrow">404 Error</p>
+        <h2>This page drifted off course.</h2>
+        <p class="lead">
+          The page you tried to open could not be found. It may have moved,
+          been removed, or the link may be incorrect.
+        </p>
+
+        <div class="hero-actions">
+          <a href="index.html" class="btn btn-primary">Back to Home</a>
+          <a href="instruction.html" class="btn btn-secondary">Open Safety Guide</a>
+        </div>
+      </div>
+
+      <aside class="error-card" aria-label="Quick recovery actions">
+        <span class="error-number">404</span>
+        <img src="favicon.webp" alt="AquaShield logo" class="error-logo" />
+        <h3>Find your next safe step</h3>
+        <p>Go back to the homepage, review the tsunami guide, or continue building your emergency plan.</p>
+        <a href="register.html" class="quick-link">Create Your Plan</a>
+      </aside>
+    </section>
+
+    <section class="help-grid" aria-label="Helpful destinations">
+      <article class="help-card">
+        <h3>Return Home</h3>
+        <p>Go back to the main page for a quick overview of what to do before, during, and after a tsunami.</p>
+        <a href="index.html">Open Home</a>
+      </article>
+
+      <article class="help-card">
+        <h3>Review the Guide</h3>
+        <p>Read the safety guide for clear steps to follow when a tsunami warning or emergency happens.</p>
+        <a href="instruction.html">View Guide</a>
+      </article>
+
+      <article class="help-card">
+        <h3>Build a Plan</h3>
+        <p>Save contact details, evacuation locations, and important notes in your household emergency plan.</p>
+        <a href="register.html">Open Plan</a>
+      </article>
+    </section>
+
+    <section class="alert-box">
+      <p><span class="warning-icon">⚠</span> Always follow local authorities' instructions first.</p>
+    </section>
+  </main>
+
+  <div class="wave-bottom">
+    <svg viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+      <path fill="#1B4965"
+        d="M0,96L60,90.7C120,85,240,75,360,69.3C480,64,600,64,720,74.7C840,85,960,107,1080,112C1200,117,1320,107,1380,101.3L1440,96L1440,140L0,140Z">
+      </path>
+    </svg>
+  </div>
 </body>
 
 </html>
