@@ -17,7 +17,7 @@
 }
 @media screen and (width < 800px) {
   .menu {
-    /* display: none; */
+     display: none;
   }
   .logo {
     flex: 0 0 50vw;

@@ -138,3 +138,40 @@ footer {
 footer a {
   font-size: 0.7rem;
 }
+nav {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Base links */
+nav a {
+  text-decoration: none;
+  color: #1b4965;
+  font-weight: 600;
+
+  font-size: 1.1rem;
+  padding: 10px 16px;
+
+  border-radius: 10px;
+  white-space: nowrap;
+
+  transition: all 0.2s ease;
+}
+
+/* Hover effect */
+nav a:hover {
+  background-color: #e6f2fa;
+  transform: translateY(-1px);
+}
+
+/* Active page */
+nav a.active {
+  color: #ffffff;
+  background-color: #5fa8d3;
+}
+
+/* Optional: subtle click feedback */
+nav a:active {
+  transform: scale(0.97);
+}

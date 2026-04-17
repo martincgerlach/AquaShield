@@ -5,141 +5,231 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AquaShield - Emergency Plan</title>
-  <link rel="icon" href="favicon.webp" type="image/webp" />
+  <link rel="icon" href="favicon-2.png" type="image/png" />
   <link rel="stylesheet" href="css/register.css" />
 </head>
 
 <body>
   <header class="site-header">
     <div class="brand">
-      <img src="favicon.webp" alt="AquaShield logo" class="brand_logo" />
+      <img src="favicon-2.png" alt="AquaShield logo" class="brand_logo" />
       <h1>AquaShield</h1>
     </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="instruction.html">Guide</a>
-      <a href="register.html" class="active">Plan</a>
-    </nav>
+    <div class="header-actions">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="instruction.html">Guide</a>
+        <a href="register.html" class="active">Plan</a>
+      </nav>
+
+      <label class="dark-toggle" aria-label="Toggle dark mode">
+        <input type="checkbox" id="darkToggle">
+        <span class="slider"></span>
+        <span class="icon">🌙</span>
+      </label>
+    </div>
   </header>
 
+  <div class="wave-top">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path fill="#5fa8d3" d="M0,64L80,69.3C160,75,320,85,480,85.3C640,85,800,75,960,74.7C1120,75,1280,85,1360,90.7L1440,96V0H0Z"></path>
+  </svg>
+</div>
+
   <main class="plan-page">
+    
     <section class="plan-hero">
       <h2>Create Your Emergency Plan</h2>
       <p>
-        Save important information for faster action and safer evacuation
-        during a tsunami emergency.
+        Save the most important household details so your family can respond
+        faster and evacuate more safely during a tsunami emergency.
       </p>
     </section>
 
-    <form class="plan-form" id="emergency-plan-form">
-      <section class="form-card">
-        <h3>Personal Information</h3>
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="full-name">Full Name</label>
-            <input type="text" id="full-name" name="full-name" />
+  
+
+    <div class="plan-layout">
+      <form class="plan-form" id="emergency-plan-form" novalidate>
+        <section class="form-card">
+          <h3>Personal Information</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="full-name">Full Name <span class="field-type required-text">Required</span></label>
+              <input type="text" id="full-name" name="full-name" autocomplete="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="address">Address <span class="field-type required-text">Required</span></label>
+              <input type="text" id="address" name="address" autocomplete="street-address" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="field-type required-text">Required</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" required />
+            </div>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <h3>Emergency Contact</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="contact-name">Contact Name <span class="field-type required-text">Required</span></label>
+              <input type="text" id="contact-name" name="contact-name" autocomplete="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="relationship">Relationship <span class="field-type optional-text">Optional</span></label>
+              <input type="text" id="relationship" name="relationship" />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-phone">Phone Number <span class="field-type required-text">Required</span></label>
+              <input type="tel" id="contact-phone" name="contact-phone" autocomplete="tel" required />
+            </div>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <h3>Household Information</h3>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="people-home">People in Home <span class="field-type optional-text">Optional</span></label>
+              <input type="text" id="people-home" name="people-home" placeholder="Adults, children, elderly" />
+            </div>
+
+            <div class="form-group">
+              <label for="pets">Pets <span class="field-type optional-text">Optional</span></label>
+              <input type="text" id="pets" name="pets" />
+            </div>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <h3>Medical / Important Needs</h3>
+          <div class="form-grid single-column">
+            <div class="form-group">
+              <label for="medical-needs">Medical needs, medication, allergies, or important notes <span
+                  class="field-type optional-text">Optional</span></label>
+              <textarea id="medical-needs" name="medical-needs" rows="4"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <h3>Evacuation Plan</h3>
+          <div class="form-grid">
+            <div class="form-group">
+            <label for="safe-location">
+              Safe Location 
+              <span class="field-type required-text">Required</span>
+            </label>
+
+            <small class="form-hint">
+              Where your household should go to stay safe
+            </small>
+
+            <input type="text" id="safe-location" name="safe-location" required />
           </div>
 
-          <div class="form-group">
-            <label for="address">Address</label>
-            <input type="text" id="address" name="address" />
-          </div>
+            <div class="form-group">
+            <label for="meeting-point">
+              Meeting Point 
+              <span class="field-type required-text">Required</span>
+            </label>
 
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone" />
+              <small class="form-hint">
+                Where everyone meets if separated
+              </small>
+
+                <input type="text" id="meeting-point" name="meeting-point" required />
+              </div>
+
+            <div class="form-group">
+            <label for="evac-route">
+              Evacuation Route 
+              <span class="field-type required-text">Required</span>
+            </label>
+
+            <small class="form-hint">
+              Describe the safest way to leave your area
+            </small>
+
+            <input type="text" id="evac-route" name="evac-route" required />
           </div>
+          </div>
+        </section>
+
+        <section class="form-card">
+          <h3>Extra Notes</h3>
+          <div class="form-grid single-column">
+            <div class="form-group">
+              <label for="extra-notes">Anything else to remember <span class="field-type optional-text">Optional</span></label>
+              <textarea id="extra-notes" name="extra-notes" rows="4"></textarea>
+            </div>
+          </div>
+        </section>
+
+        <div class="form-actions">
+          <button type="submit" class="save-btn">Save Plan</button>
+          <button type="button" class="clear-btn" id="clear-plan-btn">Clear Plan</button>
         </div>
-      </section>
 
-      <section class="form-card">
-        <h3>Emergency Contact</h3>
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="contact-name">Contact Name</label>
-            <input type="text" id="contact-name" name="contact-name" />
-          </div>
+        <p class="plan-status" id="plan-status" role="status" aria-live="polite"></p>
+      </form>
 
-          <div class="form-group">
-            <label for="relationship">Relationship</label>
-            <input type="text" id="relationship" name="relationship" />
-          </div>
+      <aside class="plan-summary" aria-labelledby="plan-summary-title">
+        <p class="summary-eyebrow">Live Summary</p>
+        <h3 id="plan-summary-title">Your emergency overview</h3>
+        <p class="summary-status" id="summary-status">
+          Start filling out the form to build your household summary.
+        </p>
 
-          <div class="form-group">
-            <label for="contact-phone">Phone Number</label>
-            <input type="tel" id="contact-phone" name="contact-phone" />
-          </div>
-        </div>
-      </section>
+        <section class="summary-block">
+          <h4>Required Information</h4>
+          <ul class="summary-list" id="summary-required-list"></ul>
+        </section>
 
-      <section class="form-card">
-        <h3>Household Information</h3>
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="people-home">People in Home</label>
-            <input type="text" id="people-home" name="people-home" placeholder="Adults, children, elderly" />
-          </div>
+        <section class="summary-block">
+          <h4>Household Snapshot</h4>
+          <ul class="summary-list" id="summary-household-list"></ul>
+        </section>
 
-          <div class="form-group">
-            <label for="pets">Pets</label>
-            <input type="text" id="pets" name="pets" />
-          </div>
-        </div>
-      </section>
+        <section class="summary-block">
+          <h4>Evacuation Details</h4>
+          <ul class="summary-list" id="summary-evacuation-list"></ul>
+        </section>
 
-      <section class="form-card">
-        <h3>Medical / Important Needs</h3>
-        <div class="form-grid single-column">
-          <div class="form-group">
-            <label for="medical-needs">Medical needs, medication, allergies, or important notes</label>
-            <textarea id="medical-needs" name="medical-needs" rows="4"></textarea>
-          </div>
-        </div>
-      </section>
+        <section class="summary-block">
+          <h4>Additional Notes</h4>
+          <p class="summary-notes" id="summary-notes">No medical or extra notes added yet.</p>
+        </section>
+      </aside>
+    </div>
 
-      <section class="form-card">
-        <h3>Evacuation Plan</h3>
-        <div class="form-grid">
-          <div class="form-group">
-            <label for="safe-location">Safe Location</label>
-            <input type="text" id="safe-location" name="safe-location" />
-          </div>
-
-          <div class="form-group">
-            <label for="meeting-point">Meeting Point</label>
-            <input type="text" id="meeting-point" name="meeting-point" />
-          </div>
-
-          <div class="form-group">
-            <label for="evac-route">Evacuation Route</label>
-            <input type="text" id="evac-route" name="evac-route" />
-          </div>
-        </div>
-      </section>
-
-      <section class="form-card">
-        <h3>Extra Notes</h3>
-        <div class="form-grid single-column">
-          <div class="form-group">
-            <label for="extra-notes">Anything else to remember</label>
-            <textarea id="extra-notes" name="extra-notes" rows="4"></textarea>
-          </div>
-        </div>
-      </section>
-
-      <div class="form-actions">
-        <button type="submit" class="save-btn">Save Plan</button>
-        <button type="button" class="clear-btn" id="clear-plan-btn">Clear Plan</button>
+    <dialog class="plan-dialog" id="plan-dialog" aria-labelledby="plan-dialog-title">
+      <div class="plan-dialog-content">
+        <p class="summary-eyebrow">Saved Plan</p>
+        <h3 id="plan-dialog-title">Here is the information you entered</h3>
+        <div class="dialog-summary" id="dialog-summary"></div>
+        <button type="button" class="save-btn dialog-close-btn" id="close-plan-dialog-btn">Close</button>
       </div>
-    </form>
+    </dialog>
 
     <section class="alert-box">
-      <p><span class="warning-icon">⚠</span> Always follow local authorities’ instructions first.</p>
+      <p><span class="warning-icon">⚠</span> Always follow local authorities' instructions first.</p>
     </section>
   </main>
 
+  <div class="wave-bottom">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path fill="#1b4965" d="M0,64L80,69.3C160,75,320,85,480,85.3C640,85,800,75,960,74.7C1120,75,1280,85,1360,90.7L1440,96V120H0Z"></path>
+  </svg>
+</div>
+
   <script src="js/register.js"></script>
+    <script src="js/dm.js"></script>
 </body>
 
 </html>

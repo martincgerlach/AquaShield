@@ -12,15 +12,23 @@
 <body>
   <header class="site-header">
     <div class="brand">
-      <img src="favicon.webp" alt="AquaShield logo" class="brand_logo" />
+      <img src="favicon-2.png" alt="AquaShield logo" class="brand_logo" />
       <h1>AquaShield</h1>
     </div>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="instruction.html">Guide</a>
-      <a href="register.html">Plan</a>
-    </nav>
+    <div class="header-actions">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="instruction.html">Guide</a>
+        <a href="register.html">Plan</a>
+      </nav>
+
+      <label class="dark-toggle" aria-label="Toggle dark mode">
+        <input type="checkbox" id="darkToggle">
+        <span class="slider"></span>
+        <span class="icon">🌙</span>
+      </label>
+    </div>
   </header>
 
   <div class="wave-top">
@@ -88,6 +96,8 @@
       </path>
     </svg>
   </div>
+
+  <script src="js/dm.js"></script>
 </body>
 
 </html>
