@@ -32,7 +32,7 @@ body.dark-mode {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
-  padding: 18px 40px;
+  padding: 20px 48px;
   background-color: var(--card);
 }
 
@@ -40,20 +40,27 @@ body.dark-mode {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 12px;
+}
+
+.brand-mark {
+  width: 96px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
 }
 
 .brand_logo {
-  width: 150px;
+  width: 100%;
   height: auto;
-  flex: 0 0 auto;
-  object-fit: contain;
   display: block;
 }
 
 .brand h1 {
   margin: 0;
-  font-size: 3.4rem;
+  font-size: 3.15rem;
   font-weight: 700;
   color: var(--primary);
   line-height: 1;
@@ -100,7 +107,7 @@ nav a:active {
 
 .hero {
   position: relative;
-  min-height: 78vh;
+  min-height: 74vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,7 +197,7 @@ nav a:active {
 .overview {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 70px 20px 50px;
+  padding: 88px 20px 64px;
   text-align: center;
 }
 
@@ -302,7 +309,7 @@ nav a:active {
 .accordion-section {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 20px 60px;
+  padding: 22px 20px 84px;
 }
 
 .accordion-layout {
@@ -315,7 +322,7 @@ nav a:active {
 .accordion-intro {
   background: linear-gradient(180deg, #eaf6fd 0%, #d7eefb 100%);
   border-radius: 30px;
-  padding: 28px;
+  padding: 32px;
   color: #1b4965;
   box-shadow: 0 10px 24px rgba(13, 27, 42, 0.08);
 }
@@ -580,7 +587,7 @@ body.dark-mode .faq-item summary::after {
 
 .alert-box {
   max-width: 900px;
-  margin: 0 auto 70px;
+  margin: 0 auto 88px;
   background-color: #f7c948;
   color: #0d1b2a;
   text-align: center;
@@ -681,7 +688,63 @@ body.dark-mode .faq-item summary::after {
   display: block;
   width: 100%;
   height: 80px;
-} 
+}
+
+.site-footer {
+  background-color: #1b4965;
+  color: #e0f2ff;
+}
+
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 26px 20px 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.footer-copy {
+  max-width: 520px;
+}
+
+.footer-title {
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.footer-text {
+  line-height: 1.7;
+  color: rgba(224, 242, 255, 0.84);
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 700;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark-mode .site-footer {
+  background-color: #091524;
+}
+
+body.dark-mode .footer-links a {
+  background-color: rgba(168, 218, 220, 0.12);
+  color: #e0f2ff;
+}
+
 @media (max-width: 900px) {
   .site-header {
     grid-template-columns: 1fr;
@@ -692,14 +755,16 @@ body.dark-mode .faq-item summary::after {
 
   .brand {
     justify-content: center;
-  }
-
-  .brand {
     gap: 14px;
   }
 
+  .brand-mark {
+    width: 80px;
+    height: 60px;
+  }
+
   .brand h1 {
-    font-size: 2.5rem;
+    font-size: 2.65rem;
   }
 
   nav {
@@ -732,6 +797,16 @@ body.dark-mode .faq-item summary::after {
     grid-template-columns: 1fr;
   }
 
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
   .dialog-grid {
     grid-template-columns: 1fr;
   }
@@ -748,11 +823,12 @@ body.dark-mode .faq-item summary::after {
 
 @media (max-width: 640px) {
   .brand h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
-  .brand_logo {
-    width: 110px;
+  .brand-mark {
+    width: 68px;
+    height: 51px;
   }
 
   .hero-buttons,
