@@ -69,7 +69,7 @@
 
             <div class="form-group">
               <label for="phone">Phone Number <span class="field-type required-text">Required</span></label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" aria-describedby="phone-error" pattern="[0-9 +()-]{8,20}" data-required-message="Please enter your phone number." data-pattern-message="Use numbers only in the phone field." required />
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric" aria-describedby="phone-error" pattern="[0-9]{8}" data-required-message="Please enter your phone number." data-pattern-message="Use 8 digits in the phone field." required />
               <small class="field-error" id="phone-error"></small>
             </div>
           </div>
@@ -92,7 +92,7 @@
 
             <div class="form-group">
               <label for="contact-phone">Phone Number <span class="field-type required-text">Required</span></label>
-              <input type="tel" id="contact-phone" name="contact-phone" autocomplete="tel" inputmode="tel" aria-describedby="contact-phone-error" pattern="[0-9 +()-]{8,20}" data-required-message="Please enter the emergency contact phone number." data-pattern-message="Use numbers only in the contact phone field." required />
+              <input type="tel" id="contact-phone" name="contact-phone" autocomplete="tel" inputmode="numeric" aria-describedby="contact-phone-error" pattern="[0-9]{8}" data-required-message="Please enter the emergency contact phone number." data-pattern-message="Use 8 digits in the contact phone field." required />
               <small class="field-error" id="contact-phone-error"></small>
             </div>
           </div>

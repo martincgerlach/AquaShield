@@ -102,19 +102,19 @@ if (form) {
       }
 
       if (isPhoneField) {
-        const hasOnlyPhoneCharacters = /^[0-9 +()-]+$/.test(value);
-        const digitCount = value.replace(/\D/g, "").length;
+        const hasOnlyDigits = /^[0-9]+$/.test(value);
+        const digitCount = value.length;
 
-        if (!hasOnlyPhoneCharacters) {
+        if (!hasOnlyDigits) {
           return field.dataset.patternMessage || "Please use the correct format.";
         }
 
         if (digitCount < 8) {
-          return "Phone number is too short.";
+          return "Phone number must be 8 digits.";
         }
 
-        if (digitCount > 15) {
-          return "Phone number is too long.";
+        if (digitCount > 8) {
+          return "Phone number must be 8 digits.";
         }
       }
     }
