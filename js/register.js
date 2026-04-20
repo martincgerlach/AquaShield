@@ -9,7 +9,6 @@ const notesSummary = document.getElementById("summary-notes");
 const planDialog = document.getElementById("plan-dialog");
 const dialogSummary = document.getElementById("dialog-summary");
 const closeDialogButton = document.getElementById("close-plan-dialog-btn");
-const storageKey = "aquashieldEmergencyPlan";
 
 const summaryGroups = {
   required: [
@@ -40,28 +39,6 @@ function collectFormData() {
   });
 
   return formData;
-}
-
-function saveFormData(formData = collectFormData()) {
-  localStorage.setItem(storageKey, JSON.stringify(formData));
-}
-
-function populateForm(formData) {
-  const fields = form.querySelectorAll("input, textarea");
-
-  fields.forEach((field) => {
-    if (formData[field.name] !== undefined) {
-      field.value = formData[field.name];
-    }
-  });
-}
-
-function loadFormData() {
-  const savedData = localStorage.getItem(storageKey);
-
-  if (!savedData) return;
-
-  populateForm(JSON.parse(savedData));
 }
 
 function setStatusMessage(message) {
@@ -199,7 +176,6 @@ function clearFormData() {
   if (!confirmed) return;
 
   form.reset();
-  localStorage.removeItem(storageKey);
   form.querySelectorAll(".form-group").forEach((group) => {
     group.classList.remove("is-invalid");
   });
@@ -219,7 +195,6 @@ form.addEventListener("submit", (event) => {
     return;
   }
 
-  saveFormData();
   updateSummary();
   buildDialogSummary(collectFormData());
   setStatusMessage("Your emergency plan has been saved.");
@@ -258,12 +233,7 @@ form.addEventListener("input", (event) => {
 
   // din eksisterende logik
   toggleInvalidState(target);
-  saveFormData();
   updateSummary();
-
-  if (statusMessage.textContent) {
-    setStatusMessage("Draft updated automatically.");
-  }
 });
 
 clearButton.addEventListener("click", clearFormData);
@@ -285,5 +255,4 @@ planDialog.addEventListener("click", (event) => {
   }
 });
 
-loadFormData();
 updateSummary();
