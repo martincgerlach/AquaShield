@@ -31,7 +31,7 @@ body.dark-mode {
 
 .site-header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 0.72fr) auto minmax(0, 1fr);
   align-items: center;
   column-gap: 24px;
   padding: 20px 48px;
@@ -90,9 +90,8 @@ nav a {
   text-decoration: none;
   color: var(--primary);
   font-weight: 600;
-
-  font-size: 1.1rem;
-  padding: 10px 16px;
+  font-size: 1rem;
+  padding: 10px 14px;
 
   border-radius: 10px;
   white-space: nowrap;
@@ -118,12 +117,14 @@ nav a:active {
 
 
 
-.form-group input.valid {
+.form-group input.valid,
+.form-group textarea.valid {
   border-color: #2a9d8f;
   box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.15);
 }
 
-.form-group input.invalid {
+.form-group input.invalid,
+.form-group textarea.invalid {
   border-color: #e76f51;
   box-shadow: 0 0 0 3px rgba(231, 111, 81, 0.15);
 }
@@ -275,6 +276,18 @@ nav a:active {
 .form-group.is-invalid textarea {
   border-color: #e76f51;
   background-color: #fff5f1;
+}
+
+.field-error {
+  display: none;
+  margin-top: 8px;
+  font-size: 0.84rem;
+  line-height: 1.45;
+  color: #c44536;
+}
+
+.form-group.is-invalid .field-error {
+  display: block;
 }
 
 .form-actions {
@@ -484,11 +497,6 @@ nav a:active {
   display: block;
 }
 
-/* vis hvis felt er invalid */
-.form-group input:invalid + .error-message {
-  display: block;
-}
-
 .warning-icon {
   font-size: 1.5rem;
   line-height: 1;
@@ -530,8 +538,8 @@ nav a:active {
   text-decoration: none;
   color: #e0f2ff;
   font-weight: 600;
-  font-size: 1.1rem;
-  padding: 10px 16px;
+  font-size: 1rem;
+  padding: 10px 14px;
   border-radius: 10px;
   white-space: nowrap;
   transition: all 0.2s ease;
@@ -667,6 +675,10 @@ body.dark-mode .summary-value,
 body.dark-mode .form-hint,
 body.dark-mode .dialog-list {
   color: #d4e9f6;
+}
+
+body.dark-mode .field-error {
+  color: #ffb4a2;
 }
 
 body.dark-mode .summary-item {

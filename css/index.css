@@ -30,7 +30,7 @@ body.dark-mode {
 }
 .site-header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 0.72fr) auto minmax(0, 1fr);
   align-items: center;
   column-gap: 24px;
   padding: 20px 48px;
@@ -87,9 +87,8 @@ nav a {
   text-decoration: none;
   color: var(--primary);
   font-weight: 600;
-
-  font-size: 1.1rem;
-  padding: 10px 16px;
+  font-size: 1rem;
+  padding: 10px 14px;
 
   border-radius: 10px;
   white-space: nowrap;
@@ -169,10 +168,11 @@ nav a:active {
   line-height: 1.1;
 }
 
-.hero-content p {
+.hero-lead {
   font-size: 1.2rem;
   line-height: 1.6;
-  margin-bottom: 28px;
+  margin: 0 auto 28px;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .hero-buttons {
@@ -180,6 +180,19 @@ nav a:active {
   justify-content: center;
   gap: 16px;
   flex-wrap: wrap;
+}
+
+.hero-note {
+  margin-top: 26px;
+  font-size: 0.96rem;
+  line-height: 1.5;
+  color: rgba(223, 244, 255, 0.88);
+}
+
+.hero-note-symbol {
+  display: inline-block;
+  margin-right: 8px;
+  color: #ffd166;
 }
 
 .btn {
@@ -192,6 +205,7 @@ nav a:active {
   cursor: pointer;
   font-size: 1rem;
   font-family: Arial, sans-serif;
+  text-align: center;
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
@@ -762,8 +776,8 @@ body.dark-mode .faq-item[open] summary::after {
   text-decoration: none;
   color: #e0f2ff;
   font-weight: 600;
-  font-size: 1.1rem;
-  padding: 10px 16px;
+  font-size: 1rem;
+  padding: 10px 14px;
   border-radius: 10px;
   white-space: nowrap;
   transition: all 0.2s ease;
@@ -839,7 +853,7 @@ body.dark-mode .footer-links a:hover {
     font-size: 2.6rem;
   }
 
-  .hero-content p {
+  .hero-lead {
     font-size: 1.05rem;
   }
 
@@ -885,15 +899,22 @@ body.dark-mode .footer-links a:hover {
     height: 51px;
   }
 
-  .hero-buttons,
   .dialog-actions {
     flex-direction: column;
   }
 
-  .hero-buttons .btn,
   .dialog-actions .btn {
     width: 100%;
     text-align: center;
+  }
+
+  .hero-content {
+    padding: 18px 10px 48px;
+  }
+
+  .hero-content h2 {
+    font-size: 2.35rem;
+    line-height: 1.03;
   }
 
   .faq-item summary {

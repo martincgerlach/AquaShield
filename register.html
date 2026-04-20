@@ -21,8 +21,8 @@
     <div class="header-actions">
       <nav>
         <a href="index.html">Home</a>
-        <a href="instruction.html">Guide</a>
-        <a href="register.html" class="active">Plan</a>
+        <a href="instruction.html">Safety Guide</a>
+        <a href="register.html" class="active">Emergency Plan</a>
       </nav>
 
       <label class="dark-toggle" aria-label="Toggle dark mode">
@@ -58,7 +58,8 @@
           <div class="form-grid">
             <div class="form-group">
               <label for="full-name">Full Name <span class="field-type required-text">Required</span></label>
-              <input type="text" id="full-name" name="full-name" autocomplete="name" required />
+              <input type="text" id="full-name" name="full-name" autocomplete="name" inputmode="text" aria-describedby="full-name-error" pattern="[A-Za-zÀ-ÿ' -]+" data-required-message="Please enter your full name." data-pattern-message="Use letters only in the name field." required />
+              <small class="field-error" id="full-name-error"></small>
             </div>
 
             <div class="form-group">
@@ -68,7 +69,8 @@
 
             <div class="form-group">
               <label for="phone">Phone Number <span class="field-type required-text">Required</span></label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel" required />
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" aria-describedby="phone-error" pattern="[0-9 +()-]{8,20}" data-required-message="Please enter your phone number." data-pattern-message="Use numbers only in the phone field." required />
+              <small class="field-error" id="phone-error"></small>
             </div>
           </div>
         </section>
@@ -78,17 +80,20 @@
           <div class="form-grid">
             <div class="form-group">
               <label for="contact-name">Contact Name <span class="field-type required-text">Required</span></label>
-              <input type="text" id="contact-name" name="contact-name" autocomplete="name" required />
+              <input type="text" id="contact-name" name="contact-name" autocomplete="name" inputmode="text" aria-describedby="contact-name-error" pattern="[A-Za-zÀ-ÿ' -]+" data-required-message="Please enter an emergency contact name." data-pattern-message="Use letters only in the contact name field." required />
+              <small class="field-error" id="contact-name-error"></small>
             </div>
 
             <div class="form-group">
               <label for="relationship">Relationship <span class="field-type optional-text">Optional</span></label>
-              <input type="text" id="relationship" name="relationship" />
+              <input type="text" id="relationship" name="relationship" inputmode="text" aria-describedby="relationship-error" pattern="[A-Za-zÀ-ÿ' -]+" data-pattern-message="Use letters only in the relationship field." />
+              <small class="field-error" id="relationship-error"></small>
             </div>
 
             <div class="form-group">
               <label for="contact-phone">Phone Number <span class="field-type required-text">Required</span></label>
-              <input type="tel" id="contact-phone" name="contact-phone" autocomplete="tel" required />
+              <input type="tel" id="contact-phone" name="contact-phone" autocomplete="tel" inputmode="tel" aria-describedby="contact-phone-error" pattern="[0-9 +()-]{8,20}" data-required-message="Please enter the emergency contact phone number." data-pattern-message="Use numbers only in the contact phone field." required />
+              <small class="field-error" id="contact-phone-error"></small>
             </div>
           </div>
         </section>
@@ -182,10 +187,10 @@
       </form>
 
       <aside class="plan-summary" aria-labelledby="plan-summary-title">
-        <p class="summary-eyebrow">Live Summary</p>
-        <h3 id="plan-summary-title">Your emergency overview</h3>
+        <p class="summary-eyebrow">Emergency Information</p>
+        <h3 id="plan-summary-title">Household emergency details</h3>
         <p class="summary-status" id="summary-status">
-          Start filling out the form to build your household summary.
+          Fill in the form to review the most important household details.
         </p>
 
         <section class="summary-block">
@@ -212,8 +217,8 @@
 
     <dialog class="plan-dialog" id="plan-dialog" aria-labelledby="plan-dialog-title">
       <div class="plan-dialog-content">
-        <p class="summary-eyebrow">Saved Plan</p>
-        <h3 id="plan-dialog-title">Here is the information you entered</h3>
+        <p class="summary-eyebrow">Emergency Plan</p>
+        <h3 id="plan-dialog-title">Review your emergency plan</h3>
         <div class="dialog-summary" id="dialog-summary"></div>
         <button type="button" class="save-btn dialog-close-btn" id="close-plan-dialog-btn">Close</button>
       </div>
@@ -234,8 +239,8 @@
     <div class="footer-inner">
       <div class="footer-links">
         <a href="index.html">Home</a>
-        <a href="instruction.html">Guide</a>
-        <a href="register.html" class="active">Plan</a>
+        <a href="instruction.html">Safety Guide</a>
+        <a href="register.html" class="active">Emergency Plan</a>
       </div>
     </div>
   </footer>
