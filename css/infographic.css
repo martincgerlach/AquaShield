@@ -458,6 +458,63 @@ body.dark-mode .dark-toggle {
   background-color: rgba(95, 168, 211, 0.16);
 }
 
+body.dark-mode .hero h2,
+body.dark-mode .hero p,
+body.dark-mode .interactive-header h3,
+body.dark-mode .scenario-stage-head h4,
+body.dark-mode .scenario-panel h4,
+body.dark-mode .svg-label {
+  color: #a8dadc;
+}
+
+body.dark-mode .interactive-header p,
+body.dark-mode .interactive-note,
+body.dark-mode .scenario-panel-copy,
+body.dark-mode .meta-value,
+body.dark-mode .scenario-actions li {
+  color: #d4e9f6;
+}
+
+body.dark-mode .interactive-guide,
+body.dark-mode .scenario-stage,
+body.dark-mode .scenario-panel,
+body.dark-mode .meta-chip,
+body.dark-mode .scenario-actions li {
+  background: #1b263b;
+  border-color: #2d3f5a;
+}
+
+body.dark-mode .scenario-stage,
+body.dark-mode .scenario-panel {
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.18);
+}
+
+body.dark-mode .scenario-tab {
+  background-color: #22324a;
+  color: #d4e9f6;
+}
+
+body.dark-mode .scenario-tab.active {
+  background-color: #457b9d;
+  color: #ffffff;
+}
+
+body.dark-mode .scenario-badge {
+  background-color: rgba(95, 168, 211, 0.16);
+  color: #a8dadc;
+}
+
+body.dark-mode .scenario-panel-label,
+body.dark-mode .meta-label {
+  color: #9fb3c9;
+}
+
+body.dark-mode .scenario-figure {
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.08), transparent 55%),
+    linear-gradient(180deg, #20344a 0%, #16283b 100%);
+}
+
 .site-footer {
   background-color: #1b4965;
   color: #e0f2ff;

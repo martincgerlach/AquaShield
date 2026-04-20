@@ -571,6 +571,11 @@ body.dark-mode .faq-answer-inner p {
   color: #d4e9f6;
 }
 
+body.dark-mode .overview h3,
+body.dark-mode .accordion-intro h3 {
+  color: #a8dadc;
+}
+
 body.dark-mode .faq-item {
   background-color: #1b263b;
   border-color: #2d3f5a;
@@ -583,6 +588,11 @@ body.dark-mode .faq-item summary {
 body.dark-mode .faq-item summary::after {
   background-color: #22324a;
   color: #e0f2ff;
+}
+
+body.dark-mode .faq-item[open] summary::after {
+  background-color: rgba(95, 168, 211, 0.16);
+  color: #a8dadc;
 }
 
 .alert-box {
