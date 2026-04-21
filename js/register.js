@@ -76,6 +76,15 @@ if (form) {
     return formData;
   }
 
+  function escapeHtml(text) {
+    return text
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
   function getValidationMessage(field) {
     const value = field.value.trim();
 
@@ -229,7 +238,7 @@ if (form) {
     return `
       <li class="${itemClass}">
         <span class="summary-label">${fieldInfo.label}</span>
-        <span class="${valueClass}">${displayValue}</span>
+        <span class="${valueClass}">${escapeHtml(displayValue)}</span>
       </li>
     `;
   }
@@ -254,7 +263,7 @@ if (form) {
         itemsMarkup += `
           <li>
             <span class="summary-label">${field.label}</span>
-            <span class="summary-value">${value}</span>
+            <span class="summary-value">${escapeHtml(value)}</span>
           </li>
         `;
       }
