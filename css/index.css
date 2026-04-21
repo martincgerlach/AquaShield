@@ -352,35 +352,40 @@ nav a:active {
 }
 
 .accordion-section {
-  max-width: 1200px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 22px 20px 84px;
 }
 
-.accordion-layout {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.3fr);
-  gap: 28px;
-  align-items: start;
+.faq-heading {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
 }
 
-.accordion-intro {
-  background: linear-gradient(180deg, #eaf6fd 0%, #d7eefb 100%);
-  border-radius: 30px;
-  padding: 32px;
+.faq-heading h3 {
+  position: relative;
+  width: fit-content;
   color: #1b4965;
-  box-shadow: 0 10px 24px rgba(13, 27, 42, 0.08);
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
 }
 
-.accordion-intro h3 {
-  font-size: 2.1rem;
-  margin-bottom: 14px;
+.faq-heading h3::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -10px;
+  width: 74%;
+  height: 4px;
+  border-radius: 999px;
+  background-color: #5fa8d3;
+  transform: translateX(-50%);
 }
 
-.accordion-intro p {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: #36556d;
+.accordion-layout {
+  display: block;
 }
 
 .accordion-list {
@@ -611,19 +616,17 @@ body.dark-mode .dialog-close {
   color: #e0f2ff;
 }
 
-body.dark-mode .accordion-intro {
-  background: linear-gradient(180deg, #1b2f47 0%, #203750 100%);
-  color: #a8dadc;
-}
-
-body.dark-mode .accordion-intro p,
 body.dark-mode .faq-answer-inner p {
   color: #d4e9f6;
 }
 
 body.dark-mode .overview h3,
-body.dark-mode .accordion-intro h3 {
+body.dark-mode .faq-heading h3 {
   color: #a8dadc;
+}
+
+body.dark-mode .faq-heading h3::after {
+  background-color: #457b9d;
 }
 
 body.dark-mode .faq-item {
@@ -861,10 +864,6 @@ body.dark-mode .footer-links a:hover {
     grid-template-columns: 1fr;
   }
 
-  .accordion-layout {
-    grid-template-columns: 1fr;
-  }
-
   .footer-inner {
     flex-direction: column;
     align-items: center;
@@ -920,10 +919,6 @@ body.dark-mode .footer-links a:hover {
   .faq-item summary {
     padding: 20px 64px 20px 20px;
     font-size: 1.02rem;
-  }
-
-  .accordion-intro {
-    padding: 22px 20px;
   }
 
   .faq-answer-inner p {
