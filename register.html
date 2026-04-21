@@ -7,6 +7,7 @@
   <title>AquaShield - Emergency Plan</title>
   <link rel="icon" href="favicon-2.png" type="image/png" />
   <link rel="stylesheet" href="css/register.css" />
+  <link rel="stylesheet" href="css/burger.css" />
 </head>
 
 <body>
@@ -19,7 +20,7 @@
     </div>
 
     <div class="header-actions">
-      <nav>
+      <nav id="main-navigation" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="instruction.html">Safety Guide</a>
         <a href="register.html" class="active">Emergency Plan</a>
@@ -30,6 +31,12 @@
         <span class="slider"></span>
         <span class="icon">🌙</span>
       </label>
+
+      <button class="burger" type="button" aria-label="Open menu" aria-controls="main-navigation" aria-expanded="false">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
     </div>
   </header>
 
@@ -247,6 +254,7 @@
 
   <script src="js/register.js"></script>
     <script src="js/dm.js"></script>
+  <script src="js/burger.js"></script>
 </body>
 
 </html>
