@@ -5,9 +5,7 @@ if (form) {
   const statusMessage = document.getElementById("plan-status");
   const summaryStatus = document.getElementById("summary-status");
   const requiredSummaryList = document.getElementById("summary-required-list");
-  const householdSummaryList = document.getElementById("summary-household-list");
   const evacuationSummaryList = document.getElementById("summary-evacuation-list");
-  const notesSummary = document.getElementById("summary-notes");
   const planDialog = document.getElementById("plan-dialog");
   const dialogSummary = document.getElementById("dialog-summary");
   const closeDialogButton = document.getElementById("close-plan-dialog-btn");
@@ -21,21 +19,14 @@ if (form) {
     { name: "contact-phone", label: "Emergency Contact Phone", required: true },
   ];
 
-  const householdFields = [
+  const contactFields = [
     { name: "relationship", label: "Relationship" },
-    { name: "people-home", label: "People in Home" },
-    { name: "pets", label: "Pets" },
   ];
 
   const evacuationFields = [
     { name: "safe-location", label: "Safe Location", required: true },
     { name: "meeting-point", label: "Meeting Point", required: true },
     { name: "evac-route", label: "Evacuation Route", required: true },
-  ];
-
-  const notesFields = [
-    { name: "medical-needs", label: "Medical / Important Needs" },
-    { name: "extra-notes", label: "Extra Notes" },
   ];
 
   function getField(name) {
@@ -285,9 +276,8 @@ if (form) {
     let markup = "";
 
     markup += createDialogGroup("Required Information", requiredFields, formData);
-    markup += createDialogGroup("Household Snapshot", householdFields, formData);
+    markup += createDialogGroup("Emergency Contact Details", contactFields, formData);
     markup += createDialogGroup("Evacuation Details", evacuationFields, formData);
-    markup += createDialogGroup("Additional Notes", notesFields, formData);
 
     dialogSummary.innerHTML = markup;
   }
@@ -310,18 +300,7 @@ if (form) {
     }
 
     renderSummaryList(requiredSummaryList, requiredFields, formData);
-    renderSummaryList(householdSummaryList, householdFields, formData);
     renderSummaryList(evacuationSummaryList, evacuationFields, formData);
-
-    const notes = [formData["medical-needs"], formData["extra-notes"]]
-      .filter(Boolean)
-      .join(" ");
-
-    if (notes) {
-      notesSummary.textContent = notes;
-    } else {
-      notesSummary.textContent = "No medical or extra notes added yet.";
-    }
   }
 
   function clearFormData() {

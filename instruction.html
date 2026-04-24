@@ -14,12 +14,12 @@
 
 <body>
   <header class="site-header">
-    <div class="brand">
+    <a class="brand" href="index.html" aria-label="Go to AquaShield home">
       <span class="brand-mark">
         <img src="favicon.webp" alt="AquaShield logo" class="brand_logo" />
       </span>
       <h1>AquaShield</h1>
-    </div>
+    </a>
 
     <div class="header-actions">
       <nav id="main-navigation" aria-label="Main navigation">
@@ -28,10 +28,11 @@
         <a href="register.html">Emergency Plan</a>
       </nav>
 
-      <label class="dark-toggle" aria-label="Toggle dark mode">
+      <label class="dark-toggle" aria-label="Switch to dark mode">
         <input type="checkbox" id="darkToggle">
+        <span class="mode-icon mode-sun" aria-hidden="true">☀️</span>
         <span class="slider"></span>
-        <span class="icon">🌙</span>
+        <span class="mode-icon mode-moon" aria-hidden="true">🌙</span>
       </label>
 
       <button class="burger" type="button" aria-label="Open menu" aria-controls="main-navigation" aria-expanded="false">
@@ -66,25 +67,24 @@
         </p>
       </div>
 
-      <div class="scenario-tabs" role="tablist" aria-label="Flood scenarios">
-        <button type="button" class="scenario-tab active" data-scenario-tab="basement" role="tab"
-          aria-selected="true">
-          Basement
-        </button>
-        <button type="button" class="scenario-tab" data-scenario-tab="rising-water" role="tab"
-          aria-selected="false">
-          High Water
-        </button>
-        <button type="button" class="scenario-tab" data-scenario-tab="pipe-backflow" role="tab"
-          aria-selected="false">
-          Backflow
-        </button>
-      </div>
-
       <div class="scenario-layout">
         <section class="scenario-stage" aria-labelledby="scenario-stage-title">
           <div class="scenario-stage-head">
             <h4 id="scenario-stage-title">House diagram</h4>
+            <div class="scenario-tabs" role="tablist" aria-label="Flood scenarios">
+              <button type="button" class="scenario-tab active" data-scenario-tab="basement" role="tab"
+                aria-selected="true">
+                Basement
+              </button>
+              <button type="button" class="scenario-tab" data-scenario-tab="rising-water" role="tab"
+                aria-selected="false">
+                High Water
+              </button>
+              <button type="button" class="scenario-tab" data-scenario-tab="pipe-backflow" role="tab"
+                aria-selected="false">
+                Backflow
+              </button>
+            </div>
             <span class="scenario-badge" id="scenario-badge">Low water</span>
           </div>
           <div class="scenario-figure" id="scenario-figure"></div>
@@ -113,9 +113,6 @@
       </div>
     </section>
 
-    <section class="alert-box">
-      <p><span class="warning-icon">⚠</span> Always follow local authorities' instructions first.</p>
-    </section>
   </main>
 
   <div class="wave-bottom">
@@ -128,6 +125,7 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
+      <p class="footer-alert"><span class="warning-icon">⚠</span> Always follow local authorities' instructions first.</p>
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="instruction.html" class="active">Safety Guide</a>

@@ -1,23 +1,21 @@
 const toggle = document.getElementById("darkToggle");
-const icon = document.querySelector(".icon");
+const toggleLabel = toggle.closest(".dark-toggle");
 
-// load saved mode
-if (localStorage.getItem("darkMode") === "enabled") {
-  document.body.classList.add("dark-mode");
-  toggle.checked = true;
-  icon.textContent = "☀️";
-} else {
-  icon.textContent = "🌙";
+function setMode(isDarkMode) {
+  document.body.classList.toggle("dark-mode", isDarkMode);
+  toggle.checked = isDarkMode;
+
+  if (toggleLabel) {
+    toggleLabel.setAttribute(
+      "aria-label",
+      isDarkMode ? "Switch to light mode" : "Switch to dark mode"
+    );
+  }
 }
 
-toggle.addEventListener("change", () => {
-  document.body.classList.toggle("dark-mode");
+setMode(localStorage.getItem("darkMode") === "enabled");
 
-  if (toggle.checked) {
-    localStorage.setItem("darkMode", "enabled");
-    icon.textContent = "☀️";
-  } else {
-    localStorage.setItem("darkMode", "disabled");
-    icon.textContent = "🌙";
-  }
+toggle.addEventListener("change", () => {
+  localStorage.setItem("darkMode", toggle.checked ? "enabled" : "disabled");
+  setMode(toggle.checked);
 });

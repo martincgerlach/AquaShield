@@ -43,6 +43,8 @@ body.dark-mode {
   justify-content: center;
   justify-self: center;
   gap: 12px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .brand-mark {
@@ -194,20 +196,23 @@ nav a:active {
 
 .scenario-tabs {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-bottom: 24px;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin: 0;
 }
 
 .scenario-tab {
+  min-width: 118px;
   border: none;
   border-radius: 999px;
   background-color: #e7f2f9;
   color: #1b4965;
-  padding: 12px 18px;
-  font-size: 0.98rem;
+  padding: 10px 16px;
+  font-size: 0.94rem;
   font-weight: 700;
   cursor: pointer;
+  text-align: center;
 }
 
 .scenario-tab.active {
@@ -231,12 +236,19 @@ nav a:active {
 }
 
 .scenario-stage-head {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: minmax(210px, 1fr) minmax(380px, auto) minmax(140px, 1fr);
+  gap: 16px;
   align-items: center;
   margin-bottom: 18px;
-  flex-wrap: wrap;
+}
+
+.scenario-stage-head h4 {
+  justify-self: start;
+}
+
+.scenario-stage-head .scenario-tabs {
+  justify-self: center;
 }
 
 .scenario-stage-head h4,
@@ -248,9 +260,10 @@ nav a:active {
 .scenario-badge {
   display: inline-flex;
   align-items: center;
-  padding: 8px 14px;
-  border-radius: 999px;
-  background-color: #d7eefb;
+  justify-self: end;
+  padding: 4px 0 4px 12px;
+  border-left: 4px solid #5fa8d3;
+  background-color: transparent;
   color: #1b4965;
   font-size: 0.92rem;
   font-weight: 700;
@@ -383,26 +396,10 @@ nav a:active {
   font-size: 15px;
   font-weight: 700;
   fill: #1b4965;
-}
-
-.alert-box {
-  max-width: 760px;
-  margin: 0 auto 18px;
-  background-color: #f4a259;
-  color: #0d1b2a;
-  text-align: center;
-  padding: 18px 24px;
-  border-radius: 20px;
-  font-weight: 700;
-  font-size: 1.05rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
-.alert-box p {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
+  paint-order: stroke;
+  stroke: rgba(238, 248, 254, 0.92);
+  stroke-linejoin: round;
+  stroke-width: 4px;
 }
 
 .warning-icon {
@@ -413,11 +410,12 @@ nav a:active {
   position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   cursor: pointer;
-  padding: 6px 10px;
+  padding: 6px 12px 6px 6px;
+  border: 1px solid #d7e6f2;
   border-radius: 999px;
-  background-color: rgba(95, 168, 211, 0.12);
+  background-color: #f1f7fc;
 }
 
 /* hide default checkbox */
@@ -449,31 +447,56 @@ nav a:active {
 }
 
 /* active state */
-.dark-toggle input:checked + .slider {
+.dark-toggle input:checked ~ .slider {
   background-color: #1b4965;
 }
 
-.dark-toggle input:checked + .slider::before {
+.dark-toggle input:checked ~ .slider::before {
   transform: translateX(30px);
 }
 
-/* icon */
-.icon {
-  font-size: 1.2rem;
-  transition: transform 0.3s ease;
+/* mode icons */
+.mode-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.mode-sun {
+  display: none;
+}
+
+.mode-moon {
+  display: inline-flex;
+}
+
+body.dark-mode .mode-sun {
+  display: inline-flex;
+}
+
+body.dark-mode .mode-moon {
+  display: none;
 }
 
 body.dark-mode .dark-toggle {
-  background-color: rgba(95, 168, 211, 0.16);
+  background-color: #132033;
+  border-color: #2d3f5a;
 }
 
 body.dark-mode .hero h2,
 body.dark-mode .hero p,
 body.dark-mode .interactive-header h3,
 body.dark-mode .scenario-stage-head h4,
-body.dark-mode .scenario-panel h4,
-body.dark-mode .svg-label {
+body.dark-mode .scenario-panel h4 {
   color: #a8dadc;
+}
+
+body.dark-mode .svg-label {
+  fill: #e0f2ff;
+  stroke: rgba(13, 27, 42, 0.85);
 }
 
 body.dark-mode .interactive-header p,
@@ -509,7 +532,8 @@ body.dark-mode .scenario-tab.active {
 }
 
 body.dark-mode .scenario-badge {
-  background-color: rgba(95, 168, 211, 0.16);
+  background-color: transparent;
+  border-left-color: #5fa8d3;
   color: #a8dadc;
 }
 
@@ -534,9 +558,27 @@ body.dark-mode .scenario-figure {
   margin: 0 auto;
   padding: 26px 20px 34px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 20px;
+  text-align: center;
+}
+
+.footer-alert {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(224, 242, 255, 0.16);
+  color: #ffd166;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 .footer-links {
@@ -622,6 +664,19 @@ body.dark-mode .footer-links a:hover {
     grid-template-columns: 1fr;
   }
 
+  .scenario-stage-head {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+
+  .scenario-stage-head .scenario-tabs {
+    justify-self: start;
+  }
+
+  .scenario-badge {
+    justify-self: start;
+  }
+
   .interactive-guide {
     padding: 26px;
   }
@@ -660,6 +715,16 @@ body.dark-mode .footer-links a:hover {
   .scenario-panel,
   .interactive-guide {
     padding: 20px;
+  }
+
+  .scenario-tabs {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .scenario-tab {
+    min-width: min(100%, 136px);
   }
 
   .scenario-figure {

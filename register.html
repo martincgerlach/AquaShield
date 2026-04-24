@@ -13,12 +13,12 @@
 
 <body>
   <header class="site-header">
-    <div class="brand">
+    <a class="brand" href="index.html" aria-label="Go to AquaShield home">
       <span class="brand-mark">
         <img src="favicon.webp" alt="AquaShield logo" class="brand_logo" />
       </span>
       <h1>AquaShield</h1>
-    </div>
+    </a>
 
     <div class="header-actions">
       <nav id="main-navigation" aria-label="Main navigation">
@@ -27,10 +27,11 @@
         <a href="register.html" class="active">Emergency Plan</a>
       </nav>
 
-      <label class="dark-toggle" aria-label="Toggle dark mode">
+      <label class="dark-toggle" aria-label="Switch to dark mode">
         <input type="checkbox" id="darkToggle">
+        <span class="mode-icon mode-sun" aria-hidden="true">☀️</span>
         <span class="slider"></span>
-        <span class="icon">🌙</span>
+        <span class="mode-icon mode-moon" aria-hidden="true">🌙</span>
       </label>
 
       <button class="burger" type="button" aria-label="Open menu" aria-controls="main-navigation" aria-expanded="false">
@@ -52,9 +53,10 @@
     <section class="plan-hero">
       <h2>Create Your Emergency Plan</h2>
       <p>
-        Save the most important household details so your family can respond
+        Save the most important contact and evacuation details so your family can respond
         faster and evacuate more safely during a tsunami emergency.
       </p>
+      <p class="plan-required-note">Fields marked with <span aria-hidden="true">*</span> must be filled in.</p>
     </section>
 
   
@@ -65,18 +67,18 @@
           <h3>Personal Information</h3>
           <div class="form-grid">
             <div class="form-group">
-              <label for="full-name">Full Name <span class="field-type required-text">Required</span></label>
+              <label for="full-name">Full Name <span class="field-type required-text" aria-label="Required field"></span></label>
               <input type="text" id="full-name" name="full-name" autocomplete="name" inputmode="text" aria-describedby="full-name-error" pattern="[A-Za-zÀ-ÿ' -]+" data-required-message="Please enter your full name." data-pattern-message="Use letters only in the name field." required />
               <small class="field-error" id="full-name-error"></small>
             </div>
 
             <div class="form-group">
-              <label for="address">Address <span class="field-type required-text">Required</span></label>
+              <label for="address">Address <span class="field-type required-text" aria-label="Required field"></span></label>
               <input type="text" id="address" name="address" autocomplete="street-address" required />
             </div>
 
             <div class="form-group">
-              <label for="phone">Phone Number <span class="field-type required-text">Required</span></label>
+              <label for="phone">Phone Number <span class="field-type required-text" aria-label="Required field"></span></label>
               <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="numeric" aria-describedby="phone-error" pattern="[0-9]{8}" data-required-message="Please enter your phone number." data-pattern-message="Use 8 digits in the phone field." required />
               <small class="field-error" id="phone-error"></small>
             </div>
@@ -87,7 +89,7 @@
           <h3>Emergency Contact</h3>
           <div class="form-grid">
             <div class="form-group">
-              <label for="contact-name">Contact Name <span class="field-type required-text">Required</span></label>
+              <label for="contact-name">Contact Name <span class="field-type required-text" aria-label="Required field"></span></label>
               <input type="text" id="contact-name" name="contact-name" autocomplete="name" inputmode="text" aria-describedby="contact-name-error" pattern="[A-Za-zÀ-ÿ' -]+" data-required-message="Please enter an emergency contact name." data-pattern-message="Use letters only in the contact name field." required />
               <small class="field-error" id="contact-name-error"></small>
             </div>
@@ -99,35 +101,9 @@
             </div>
 
             <div class="form-group">
-              <label for="contact-phone">Phone Number <span class="field-type required-text">Required</span></label>
+              <label for="contact-phone">Phone Number <span class="field-type required-text" aria-label="Required field"></span></label>
               <input type="tel" id="contact-phone" name="contact-phone" autocomplete="tel" inputmode="numeric" aria-describedby="contact-phone-error" pattern="[0-9]{8}" data-required-message="Please enter the emergency contact phone number." data-pattern-message="Use 8 digits in the contact phone field." required />
               <small class="field-error" id="contact-phone-error"></small>
-            </div>
-          </div>
-        </section>
-
-        <section class="form-card">
-          <h3>Household Information</h3>
-          <div class="form-grid">
-            <div class="form-group">
-              <label for="people-home">People in Home <span class="field-type optional-text">Optional</span></label>
-              <input type="text" id="people-home" name="people-home" placeholder="Adults, children, elderly" />
-            </div>
-
-            <div class="form-group">
-              <label for="pets">Pets <span class="field-type optional-text">Optional</span></label>
-              <input type="text" id="pets" name="pets" />
-            </div>
-          </div>
-        </section>
-
-        <section class="form-card">
-          <h3>Medical / Important Needs</h3>
-          <div class="form-grid single-column">
-            <div class="form-group">
-              <label for="medical-needs">Medical needs, medication, allergies, or important notes <span
-                  class="field-type optional-text">Optional</span></label>
-              <textarea id="medical-needs" name="medical-needs" rows="4"></textarea>
             </div>
           </div>
         </section>
@@ -138,7 +114,7 @@
             <div class="form-group">
             <label for="safe-location">
               Safe Location 
-              <span class="field-type required-text">Required</span>
+              <span class="field-type required-text" aria-label="Required field"></span>
             </label>
 
             <small class="form-hint">
@@ -151,7 +127,7 @@
             <div class="form-group">
             <label for="meeting-point">
               Meeting Point 
-              <span class="field-type required-text">Required</span>
+              <span class="field-type required-text" aria-label="Required field"></span>
             </label>
 
               <small class="form-hint">
@@ -164,7 +140,7 @@
             <div class="form-group">
             <label for="evac-route">
               Evacuation Route 
-              <span class="field-type required-text">Required</span>
+              <span class="field-type required-text" aria-label="Required field"></span>
             </label>
 
             <small class="form-hint">
@@ -173,16 +149,6 @@
 
             <input type="text" id="evac-route" name="evac-route" required />
           </div>
-          </div>
-        </section>
-
-        <section class="form-card">
-          <h3>Extra Notes</h3>
-          <div class="form-grid single-column">
-            <div class="form-group">
-              <label for="extra-notes">Anything else to remember <span class="field-type optional-text">Optional</span></label>
-              <textarea id="extra-notes" name="extra-notes" rows="4"></textarea>
-            </div>
           </div>
         </section>
 
@@ -196,9 +162,9 @@
 
       <aside class="plan-summary" aria-labelledby="plan-summary-title">
         <p class="summary-eyebrow">Emergency Information</p>
-        <h3 id="plan-summary-title">Household emergency details</h3>
+        <h3 id="plan-summary-title">Emergency plan overview</h3>
         <p class="summary-status" id="summary-status">
-          Fill in the form to review the most important household details.
+          Fill in the form to review the most important emergency details.
         </p>
 
         <section class="summary-block">
@@ -207,18 +173,8 @@
         </section>
 
         <section class="summary-block">
-          <h4>Household Snapshot</h4>
-          <ul class="summary-list" id="summary-household-list"></ul>
-        </section>
-
-        <section class="summary-block">
           <h4>Evacuation Details</h4>
           <ul class="summary-list" id="summary-evacuation-list"></ul>
-        </section>
-
-        <section class="summary-block">
-          <h4>Additional Notes</h4>
-          <p class="summary-notes" id="summary-notes">No medical or extra notes added yet.</p>
         </section>
       </aside>
     </div>
@@ -232,9 +188,6 @@
       </div>
     </dialog>
 
-    <section class="alert-box">
-      <p><span class="warning-icon">⚠</span> Always follow local authorities' instructions first.</p>
-    </section>
   </main>
 
   <div class="wave-bottom">
@@ -245,6 +198,7 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
+      <p class="footer-alert"><span class="warning-icon">⚠</span> Always follow local authorities' instructions first.</p>
       <div class="footer-links">
         <a href="index.html">Home</a>
         <a href="instruction.html">Safety Guide</a>

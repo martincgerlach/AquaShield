@@ -93,8 +93,13 @@ body.dark-mode .easter-toast {
   }
 
   .dark-toggle {
-    gap: 0;
+    gap: 4px;
     padding: 4px;
+  }
+
+  .mode-icon {
+    width: 1rem;
+    font-size: 0.95rem;
   }
 
   .slider {
@@ -107,12 +112,8 @@ body.dark-mode .easter-toast {
     height: 18px;
   }
 
-  .dark-toggle input:checked + .slider::before {
+  .dark-toggle input:checked ~ .slider::before {
     transform: translateX(22px);
-  }
-
-  .icon {
-    display: none;
   }
 
   .burger .line {

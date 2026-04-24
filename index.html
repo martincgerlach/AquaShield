@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AquaShield - Home</title>
+  <title>AquaShield - Tsunami Emergency Guide</title>
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png" />
   <link rel="stylesheet" href="css/index.css" />
@@ -13,12 +13,12 @@
 
 <body>
   <header class="site-header">
-    <div class="brand">
+    <a class="brand" href="index.html" aria-label="Go to AquaShield home">
       <span class="brand-mark">
         <img src="favicon.webp" alt="AquaShield logo" class="brand_logo" />
       </span>
       <h1>AquaShield</h1>
-    </div>
+    </a>
 
     <div class="header-actions">
       <nav id="main-navigation" aria-label="Main navigation">
@@ -27,10 +27,11 @@
         <a href="register.html">Emergency Plan</a>
       </nav>
 
-      <label class="dark-toggle" aria-label="Toggle dark mode">
+      <label class="dark-toggle" aria-label="Switch to dark mode">
         <input type="checkbox" id="darkToggle">
+        <span class="mode-icon mode-sun" aria-hidden="true">☀️</span>
         <span class="slider"></span>
-        <span class="icon">🌙</span>
+        <span class="mode-icon mode-moon" aria-hidden="true">🌙</span>
       </label>
 
       <button class="burger" type="button" aria-label="Open menu" aria-controls="main-navigation" aria-expanded="false">
@@ -216,9 +217,6 @@
       </div>
     </section>
 
-    <section class="alert-box">
-      <p><span class="warning-icon">⚠</span> Always follow local authorities’ instructions first.</p>
-    </section>
   </main>
 
   <dialog class="checklist-dialog" id="checklistDialog" aria-labelledby="checklist-dialog-title">
@@ -278,6 +276,7 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
+      <p class="footer-alert"><span class="warning-icon">⚠</span> Always follow local authorities' instructions first.</p>
       <div class="footer-links">
         <a href="index.html" class="active">Home</a>
         <a href="instruction.html">Safety Guide</a>
